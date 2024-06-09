@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PostEntity from './PostEntity';
+import Link from 'next/link';
 
 interface Post {
   id: number;
@@ -45,15 +46,21 @@ const PostWrapper = () => {
     <div className="flex items-center flex-col mt-20 gap-10 py-6">
       {data?.posts.map(
         ({ body, reactions, tags, title, userId, views }, id) => (
-          <PostEntity
+          <Link
             key={id}
-            description={body}
-            reactions={reactions}
-            tags={tags}
-            title={title}
-            userId={userId}
-            views={views}
-          />
+            href={`/posts/${id + 1}`}
+            className="flex justify-center"
+          >
+            <PostEntity
+              key={id}
+              description={body}
+              reactions={reactions}
+              tags={tags}
+              title={title}
+              userId={userId}
+              views={views}
+            />
+          </Link>
         )
       )}
     </div>

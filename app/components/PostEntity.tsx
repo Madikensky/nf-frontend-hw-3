@@ -37,7 +37,7 @@ const PostEntity: React.FC<PostProps> = ({
         ))}
       </div>
       <div>
-        <strong>Views:</strong> {views} {/* add like, dislike */}
+        <strong>Views:</strong> {views}
       </div>
       <div className="flex gap-5 flex-row">
         <div className="flex gap-1 items-center">
